@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="transporteEAR-1.0.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="transporteEJBClient-1.0.0.jar" deploy-path="/lib" handle="module:/resource/tranporteEJBClient/tranporteEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="transporteEJB-1.0.0.jar" deploy-path="/" handle="module:/resource/tranporteEJB/tranporteEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="transporteWeb-1.0.0.war" deploy-path="/" handle="module:/resource/transporteWeb/transporteWeb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

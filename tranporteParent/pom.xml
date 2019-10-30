@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>co.com.datatools.transporte</groupId>
+	<artifactId>transporteParent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>transporteParent</name>
+	<description>
+	POM Maestro para el proyecto de Transporte
+	</description>
+
+	<organization>
+		<name>Data Tools</name>
+		<url>http://www.datatools.com.co</url>
+	</organization>
+	<profiles>
+		<!-- Perfil desarrollo -->
+		<profile>
+			<id>development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<project.stage>Development</project.stage>
+			</properties>
+			<modules>
+				<module>../transporteEJBCliente</module>
+				<module>../transporteEJB</module>		
+				<module>../transporteWar</module>
+				<module>../transporteEAR</module>
+			</modules>
+		</profile>
+
+		<!-- Perfil release version -->
+		<profile>
+			<id>release</id>
+			<properties>
+				<project.stage>Production</project.stage>
+			</properties>
+			<modules>
+				<module>../transporteEJBClient</module>
+				<module>../transporteEJB</module>				
+				<module>../transporteWar</module>
+				<module>../transporteEAR</module>
+			</modules>		</profile>
+
+		<!-- Perfil pruebas unitarias <profile> <id>test</id> <modules> <module>../SeguridadTest</module> 
+			</modules> </profile> -->
+	</profiles>
+
+	<properties>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>		
+		<!-- API Java EE 6.0 -->
+		<jboss-javaee-6.0.version>3.0.2.Final</jboss-javaee-6.0.version>
+		<jboss-logging.version>3.1.4.GA</jboss-logging.version>
+		<transporte.version>1.0.0</transporte.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<ejbVersion>3.1</ejbVersion>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jboss.as.plugins</groupId>
+					<artifactId>jboss-as-maven-plugin</artifactId>
+					<version>7.4.Final</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<target>1.7</target>
+						<source>1.7</source>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<target>1.7</target>
+					<source>1.7</source>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<distributionManagement>
+	</distributionManagement>
+</project>

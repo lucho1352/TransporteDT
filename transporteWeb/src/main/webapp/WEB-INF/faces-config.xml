@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ <managed-bean>
+  <managed-bean-name>empresaBean</managed-bean-name>
+  <managed-bean-class>co.com.datatools.transporte.web.EmpresaBean</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+  <managed-property>
+   <property-name>empresa</property-name>
+   <property-class>co.com.datatools.transporte.dto.Empresa</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <application/>
+</faces-config>
