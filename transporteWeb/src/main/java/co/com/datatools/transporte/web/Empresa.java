@@ -1,10 +1,10 @@
 package co.com.datatools.transporte.web;
 
-public class EmpresaBean {
+public class Empresa {
 
 	private co.com.datatools.transporte.dto.Empresa empresa;
 
-	public EmpresaBean() {
+	public Empresa() {
 		// TODO Auto-generated constructor stub
 	}
 
