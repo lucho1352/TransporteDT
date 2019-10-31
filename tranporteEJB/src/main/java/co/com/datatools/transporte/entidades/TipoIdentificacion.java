@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="\"Tipo_Identificacion\"")
-@NamedQueries({@NamedQuery(name="TipoIdentificacion.findAll", query="SELECT t FROM TipoIdentificacion t"),
+@NamedQueries({ @NamedQuery(name = "TipoIdentificacion.findAll", query="SELECT t FROM TipoIdentificacion t"),
 			   @NamedQuery(name="TipoIdentificacion.findByTipoId", query="SELECT t FROM TipoIdentificacion t WHERE t.abreviatura = :tipoId")})
 public class TipoIdentificacion implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -25,7 +25,7 @@ import javax.ejb.EJB;
 /**
  * Servlet implementation class EmpresaServlet
  */
-@WebServlet("/EmpresaServlet2")
+@WebServlet("/EmpresaServlet")
 public class EmpresaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -88,7 +88,7 @@ public class EmpresaServlet extends HttpServlet {
         
     try {
 	        //Consultar lista de tipos de identificacion
-	        List<TipoIdentificacion> objListTipoIdentificacion = objMapeadorTipoIdentificacion.buscarPorNameQuery("Tipoidentificacion.findAll", null);
+	        List<TipoIdentificacion> objListTipoIdentificacion = objMapeadorTipoIdentificacion.buscarPorNameQuery("TipoIdentificacion.findAll", null);
 	        for (TipoIdentificacion objTipoId : objListTipoIdentificacion){
 	            JSONObject objJSONTipoId = new JSONObject();
 	            objJSONTipoId.put("Id", objTipoId.getId());
@@ -97,7 +97,8 @@ public class EmpresaServlet extends HttpServlet {
 	            objJSONArrayTipoId.add(objJSONTipoId);
 	        }
 	
-	        json.put("tipoIds", objJSONArrayTipoId);        
+	        json.put("tipoIds", objJSONArrayTipoId);
+	        json.put("e", "0");
         }
         catch (Exception e) 
         {
