@@ -115,19 +115,18 @@ public class EmpresaServlet extends HttpServlet {
             Map parametrosEmpresa = new HashMap<String, String>();
             parametrosEmpresa.put("tipoId", request.getParameter("tipoId"));
             parametrosEmpresa.put("numeroId", request.getParameter("numeroId"));
-        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Persona.findByTipoIdNumeroId", parametrosEmpresa);
+        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Empresa.findEmpresaByTipoyNumeroId", parametrosEmpresa);
         	
         	if(objEmpresa != null)
         	{
-        		json.put("e","0");
         		json.put("empresa",objEmpresa);
         		json.put("msg","exito");
         	}
         	else
         	{
-        		json.put("e","1");
         		json.put("msg","Esta empresa aún no existe");
         	}
+        	json.put("e","0");
         }
         catch (Exception e) 
         {
@@ -148,7 +147,7 @@ public class EmpresaServlet extends HttpServlet {
             
         	//Buscar datos de empresa
             parametrosEmpresa.put("numeroId", request.getParameter("numeroId"));
-        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Persona.findEmpresaByTipoIdNumeroId", parametrosEmpresa);
+        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Empresa.findEmpresaByTipoyNumeroId", parametrosEmpresa);
         	
         	if(objEmpresa == null)
         	{
@@ -160,12 +159,13 @@ public class EmpresaServlet extends HttpServlet {
         	objEmpresa.setDepartamento(request.getParameter("departamento"));
         	objEmpresa.setDireccion(request.getParameter("direccion"));
         	objEmpresa.setNombre(request.getParameter("nombre"));
-        	objEmpresa.setNumero_Identificacion(request.getParameter("numero_Identificacion"));
+        	objEmpresa.setNumero_Identificacion(request.getParameter("numeroIdentificacion"));
         	objEmpresa.setTelefono(request.getParameter("telefono"));
         	objEmpresa.setTipoIdentificacion(objTipoIdentificacion);
+        	objMapeadorEmpresa.guardar(objEmpresa);
         	
             json.put("e","0");
-            json.put("msg","exito");
+            json.put("msg","Empresa almacenada exitosamente");
         }
         catch (Exception e) 
         {

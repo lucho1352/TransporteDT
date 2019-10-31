@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name="Empresa.findEmpresaByTipoyNumeroId", query="SELECT p FROM Empresa p WHERE p.numeroIdentificacion = :numeroId and p.tipoIdentificacion.abreviatura = :tipoId")
 @DiscriminatorValue("1")
 public class Empresa extends Persona
 {
