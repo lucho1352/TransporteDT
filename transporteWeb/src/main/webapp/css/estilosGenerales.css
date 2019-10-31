@@ -1,0 +1,151 @@
+/**Fondo con foto empresarial**/
+body {
+	background-image: url(../images/FondoZapatosCafes.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	}
+
+body,td,th {
+	font-size:12px;
+}
+
+h1 {
+	text-align:center;
+	font-size:15px;
+}
+
+hr {
+	border:0;
+	border-top:1px solid #ccc;
+	margin-bottom:-10px
+}
+
+div#principal {
+	width:auto;
+	height:auto;
+	margin-top: 150px;
+	margin-left: 400px;
+	text-align:center;
+	float:left
+}
+
+div#first {
+	width:287px;
+	height:615px;
+	padding:0 45px 20px;
+	border:1px dotted #ccc;
+	float:left
+}
+
+input {
+	width:187px;
+	height:30px;
+	border:1px solid gray;
+	padding-left:10px;
+	margin-top:8px;
+	border-radius:5px
+}
+
+select {
+	width:200px;
+	height:35px;
+	padding:10px;
+	/*margin-top:5px;*/
+	line-height:1;
+	border-radius:5px;
+	font-size:12px;
+	/*-webkit-appearance:none;*/
+	outline:none
+}
+
+label {
+	width:140px;
+	height:35px;
+	padding-left:10px;
+	margin-top:5px;
+}
+
+.boton {
+	width:135px;
+	height:30px;
+	color:#FFF;
+	margin-top:20px;
+	background-color:#B3B4BC;
+	font-size:12px;
+	font-weight:700;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+}
+
+.boton:hover{
+	background-color:#80bfff;
+}
+
+div.titulo{
+	font-size:15px;	
+	color: #00377B;
+	border-bottom: 1px solid #00377B;
+	padding-bottom: 2px;
+	margin-top: 10px;
+}
+
+div.contenedor{
+    width: 95%;
+    height: 90%;
+    margin: 2%;
+    display: block;
+    position: absolute;
+    overflow-y: auto;
+}
+
+div.copyright{
+	position: relative;
+	font-family: cursive;
+	font-size: 10px;
+	margin-top: 0%;
+	float: right
+}
+
+fielset{
+	padding: 5px 5px 5px 5px;
+	margin-top: 25px;
+	border: 1px solid #00377B;
+	font-size: small;
+	color: #00377B;
+}
+
+iframe{
+	background-color: transparent;
+	height: 1000px;
+	width: 1000px;
+	position: absolute;
+}
+
+legend{
+	margin-top: 10px;
+}
+
+tbody{
+	align-content: center;
+}
+
+table.center{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+tr{
+	width: 300px;
+}
+
+td{
+	width: 150px;
+	text-align: right;
+}
+
+td label{
+	text-align: right;
+	padding-left:10px;
+	margin-top:5px;
+}

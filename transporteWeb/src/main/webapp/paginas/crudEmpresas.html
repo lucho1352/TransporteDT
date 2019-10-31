@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Gestion&oacute;n Datos de Empresa</title>
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui-1.12.1.custom.css">
+    <link type="text/css" rel="stylesheet" href="../css/estilosGenerales.css">
+    <link type="text/css" rel="stylesheet" href="../css/fonts.css">
+    <!-- JS -->
+    <script type="text/javascript" src="../js/General Libraries/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../js/General Libraries/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../js/crudEmpresas.js"></script>
+</head>
+<body>
+    <div class="titulo"> Gesti&oacute;n de Empresa</div>
+    <div class="contenedor">
+        <div id="adminEmpresa">
+            <fieldset>
+                <legend>Identificaci&oacute;n de la Empresa</legend>
+                <br>
+                    <table class="center">
+                        <tbody>
+                            <tr>
+                                <td><label>Tipo Identificaci&oacute;n&nbsp;&nbsp;</label></td>
+                                <td><select id="documentoSelect" class="documentoSelect" required>
+                                        <option value="">  - Seleccione -  </option>
+                                        </select></td>	
+                            	</tr>
+                            	<tr>
+                                     <td><label>N&uacute;mero Identifiaci&oacute;n&nbsp;&nbsp;</label></td>
+                                     <td><input id="numeroIdEmpresa" name="numeroIdEmpresa" required></td>	
+                                </tr>
+                        </tbody>						
+                    </table>
+            </fieldset>
+        </div>
+        <div id="seccionDatosEmpresa" style="display:none">
+        <br>
+            <form id="formularioEmpresa" name="formularioEmpresa">
+				<fieldset>
+	               <legend>Datos de la Empresa</legend>
+	               <br>
+	                   <table id="recuadroDatosEmpresa" class="center">
+	                       <tbody>
+	                           <tr>
+	                               <td><label>Nombre Empresa&nbsp;&nbsp;</label></td>
+	                               <td><input id="nombreEmpresa" class="infoEmpresa" name="nombreEmpresa" required></td>	
+	                           </tr>
+	                           <tr>
+	                               <td><label>Pais&nbsp;&nbsp;</label></td>
+	                               <td><input id="paisEmpresa" class="infoEmpresa" name="paisEmpresa" required></td>	
+	                           </tr>
+	<tr>
+	                               <td><label>Departamento&nbsp;&nbsp;</label></td>
+	                               <td><input id="departamentoEmpresa" class="infoEmpresa" name="departamentoEmpresa" required></td>	
+	                           </tr>
+	<tr>
+	                               <td><label>Ciudad&nbsp;&nbsp;</label></td>
+	                               <td><input id="ciudadEmpresa" class="infoEmpresa" name="ciudadEmpresa" required></td>	
+	                           </tr>
+	                           <tr>
+	                                <td><label>Direcci&oacute;n Casa&nbsp;&nbsp;</label></td>
+	                               <td><input id="direccionEmpleado" class="infoEmpresa" name="direccionEmpleado" required></td>	
+	                           </tr>
+	                           <tr>
+	                               <td><label>Telefono&nbsp;&nbsp;</label></td>
+	                               <td><input id="telefonoEmpresa" class="infoEmpresa" name="telefonoEmpresa" required></td>	
+	                           </tr>
+	                       </tbody>
+	                   </table>
+	                   <table class="center">
+	                       <tbody>
+	                           <tr class="botones">
+	                               <td id="TRBtnCrear"><input name="btnCrear" class="boton" id="btnCrear" value="Crear"/></td>
+	                               <td id="TRBtnEliminar"><input name="btnEliminar" class="boton sinImplementar" id="btnEliminar" value="Eliminar"/></td>
+	                               <td id="TRBtnModificar"><input name="btnModificar" class="boton sinImplementar" id="btnModificar" value="Modificar"/></td>
+	                               <td id="TRBtnCancelar"><input name="btnCancelar" class="boton" id="btnCancelar" value="Cancelar"/></td>
+	                           </tr>
+	                       </tbody>
+	               </table>
+                </fieldset>
+            </form>
+        </div>
+        <div id="mensajesPantalla" title="" style="display:none;"></div>
+    </div>
+</body>
+</html>
