@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name="\"Rel_Empresa_Vehiculo\"")
-@NamedQuery(name="Rel_Empresa_Vehiculo.findAll", query="SELECT r FROM Rel_Empresa_Vehiculo r")
+@NamedQuery(name="RelEmpresaVehiculo.findAll", query="SELECT r FROM RelEmpresaVehiculo r")
 public class RelEmpresaVehiculo implements Serializable {
 	private static final long serialVersionUID = 1L;
 

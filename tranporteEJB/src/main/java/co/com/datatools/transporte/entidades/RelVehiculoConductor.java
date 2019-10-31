@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="\"Rel_Vehiculo_Conductor\"")
-@NamedQuery(name="Rel_Vehiculo_Conductor.findAll", query="SELECT r FROM Rel_Vehiculo_Conductor r")
+@NamedQuery(name="RelVehiculoConductor.findAll", query="SELECT r FROM RelVehiculoConductor r")
 public class RelVehiculoConductor implements Serializable {
 	private static final long serialVersionUID = 1L;
 

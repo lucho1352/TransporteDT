@@ -7,7 +7,8 @@ import javax.persistence.*;
 
 
 @Entity
-@NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
+@NamedQueries({@NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p"),
+			   @NamedQuery(name="Persona.findEmpresaByTipoIdNumeroId", query="SELECT p FROM Empresa p WHERE p.numeroIdentificacion = :numeroId and p.tipoIdentificacion.abreviatura = :tipoId")})
 @Table(name="\"Persona\"")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="\"Tipo\"",discriminatorType = DiscriminatorType.INTEGER)

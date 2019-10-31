@@ -2,7 +2,9 @@ package co.com.datatools.transporte.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,11 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.com.datatools.transporte.entidades.TipoIdentificacion;
+import co.com.datatools.transporte.entidades.jpersonas.Empresa;
 import co.com.datatools.transporte.sesion.MapeadorEmpresa;
 import co.com.datatools.transporte.sesion.MapeadorTipoIdentificacion;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+
+import javax.ejb.EJB;
 
 /**
  * Servlet implementation class EmpresaServlet
@@ -106,9 +111,22 @@ public class EmpresaServlet extends HttpServlet {
         JSONObject json = new JSONObject();
         try
         {
-
-            json.put("e","0");
-            json.put("msg","exito");
+            Map parametrosEmpresa = new HashMap<String, String>();
+            parametrosEmpresa.put("tipoId", request.getParameter("tipoId"));
+            parametrosEmpresa.put("numeroId", request.getParameter("numeroId"));
+        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Persona.findByTipoIdNumeroId", parametrosEmpresa);
+        	
+        	if(objEmpresa != null)
+        	{
+        		json.put("e","0");
+        		json.put("empresa",objEmpresa);
+        		json.put("msg","exito");
+        	}
+        	else
+        	{
+        		json.put("e","1");
+        		json.put("msg","Esta empresa aún no existe");
+        	}
         }
         catch (Exception e) 
         {
@@ -122,7 +140,29 @@ public class EmpresaServlet extends HttpServlet {
         JSONObject json = new JSONObject();
         try
         {
-
+        	//Buscar objeto tipo identificacion
+        	Map parametrosEmpresa = new HashMap<String, String>();
+            parametrosEmpresa.put("tipoId", request.getParameter("tipoId"));
+            TipoIdentificacion objTipoIdentificacion = (TipoIdentificacion) objMapeadorTipoIdentificacion.buscarObjetoPorNameQuery("TipoIdentificacion.findByTipoId",parametrosEmpresa);
+            
+        	//Buscar datos de empresa
+            parametrosEmpresa.put("numeroId", request.getParameter("numeroId"));
+        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Persona.findEmpresaByTipoIdNumeroId", parametrosEmpresa);
+        	
+        	if(objEmpresa == null)
+        	{
+        		objEmpresa = new Empresa();
+        	}
+        	
+        	objEmpresa.setPais(request.getParameter("pais"));
+        	objEmpresa.setCiudad(request.getParameter("ciudad"));
+        	objEmpresa.setDepartamento(request.getParameter("departamento"));
+        	objEmpresa.setDireccion(request.getParameter("direccion"));
+        	objEmpresa.setNombre(request.getParameter("nombre"));
+        	objEmpresa.setNumero_Identificacion(request.getParameter("numero_Identificacion"));
+        	objEmpresa.setTelefono(request.getParameter("telefono"));
+        	objEmpresa.setTipoIdentificacion(objTipoIdentificacion);
+        	
             json.put("e","0");
             json.put("msg","exito");
         }
@@ -138,7 +178,13 @@ public class EmpresaServlet extends HttpServlet {
         JSONObject json = new JSONObject();
         try
         {
-
+        	
+        	Map parametrosEmpresa = new HashMap<String, String>();
+            parametrosEmpresa.put("tipoId", request.getParameter("tipoId"));
+            parametrosEmpresa.put("numeroId", request.getParameter("numeroId"));
+        	Empresa objEmpresa = (Empresa) objMapeadorEmpresa.buscarObjetoPorNameQuery("Persona.findEmpresaByTipoIdNumeroId", parametrosEmpresa);
+        	objMapeadorEmpresa.eliminar(objEmpresa);  
+        	
             json.put("e","0");
             json.put("msg","exito");
         }
