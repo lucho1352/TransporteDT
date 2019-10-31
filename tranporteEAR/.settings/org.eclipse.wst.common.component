@@ -2,13 +2,19 @@
     <wb-module deploy-name="transporteEAR-1.0.0">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="transporteEJBClient-1.0.0.jar" deploy-path="/lib" handle="module:/resource/tranporteEJBClient/tranporteEJBClient">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="transporteEJB-1.0.0.jar" deploy-path="/" handle="module:/resource/tranporteEJB/tranporteEJB">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="transporteWeb-1.0.0.war" deploy-path="/" handle="module:/resource/transporteWeb/transporteWeb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="eclipselink-2.7.5.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/eclipselink/2.7.5/eclipselink-2.7.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jakarta.persistence-2.2.3.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/jakarta.persistence/2.2.3/jakarta.persistence-2.2.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commonj.sdo-2.1.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

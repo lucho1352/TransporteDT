@@ -8,6 +8,7 @@
 		<relativePath>../transporteParent/pom.xml</relativePath>
 	</parent>
 
+	<groupId>co.com.datatools.transporte</groupId>
 	<artifactId>transporteWeb</artifactId>
 	<name>transporteWeb</name>
 	<packaging>war</packaging>
@@ -27,37 +28,46 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.jboss.logging</groupId>
 			<artifactId>jboss-logging</artifactId>
 			<version>${jboss-logging.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<!-- otras dependencias -->
 		<dependency>
 			<groupId>co.com.datatools.transporte</groupId>
-			<artifactId>transporteEJBClient</artifactId>
-			<version>${transporte.version}</version>
-			<type>jar</type>
-			<scope>compile</scope>
+			<artifactId>transporteEJB</artifactId>
+			<version>1.0.0</version>
+			<type>ejb</type>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 		</dependency>
+		
+		<dependency>
+    		<groupId>net.sf.json-lib</groupId>
+    		<artifactId>json-lib</artifactId>
+    		<version>2.4</version>
+		</dependency>
+		
 	</dependencies>
-	<distributionManagement>
-	</distributionManagement>
 
 </project>

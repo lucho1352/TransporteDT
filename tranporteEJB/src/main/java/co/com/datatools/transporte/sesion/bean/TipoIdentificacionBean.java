@@ -6,8 +6,9 @@ import javax.ejb.TransactionAttributeType;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import co.com.datatools.transporte.entidades.*;
 
-import co.com.datatools.transporte.entidades.TipoIdentificacion;;
+
 import co.com.datatools.transporte.sesion.MapeadorTipoIdentificacion;
 
 @Stateless

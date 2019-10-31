@@ -7,7 +7,7 @@ import java.util.Map;
 
 import javax.persistence.CacheRetrieveMode;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManager;
+
 import javax.persistence.Query;
 
 import org.eclipse.persistence.config.QueryHints;

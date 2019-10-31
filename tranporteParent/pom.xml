@@ -27,7 +27,7 @@
 				<project.stage>Development</project.stage>
 			</properties>
 			<modules>
-				<module>../transporteEJBCliente</module>
+				
 				<module>../transporteEJB</module>		
 				<module>../transporteWar</module>
 				<module>../transporteEAR</module>
@@ -41,11 +41,12 @@
 				<project.stage>Production</project.stage>
 			</properties>
 			<modules>
-				<module>../transporteEJBClient</module>
+				
 				<module>../transporteEJB</module>				
 				<module>../transporteWar</module>
 				<module>../transporteEAR</module>
-			</modules>		</profile>
+			</modules>		
+			</profile>
 
 		<!-- Perfil pruebas unitarias <profile> <id>test</id> <modules> <module>../SeguridadTest</module> 
 			</modules> </profile> -->

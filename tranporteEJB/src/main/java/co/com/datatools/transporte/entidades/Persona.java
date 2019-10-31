@@ -1,8 +1,10 @@
 package co.com.datatools.transporte.entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.*;
+
 
 @Entity
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")

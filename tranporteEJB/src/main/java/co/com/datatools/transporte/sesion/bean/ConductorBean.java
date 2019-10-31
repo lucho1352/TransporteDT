@@ -8,11 +8,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import co.com.datatools.transporte.entidades.jpersonas.Conductor;
-import co.com.datatools.transporte.sesion.MapeadorConductor;
+import co.com.datatools.transporte.sesion.MapeadorCondutor;
+
 
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-public class ConductorBean extends MapeadorAbstracta<Conductor> implements MapeadorConductor 
+public class ConductorBean extends MapeadorAbstracta<Conductor> implements MapeadorCondutor 
 {
     @PersistenceContext(unitName="Model")
     private EntityManager em;
